@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="灵感小记自媒体内容创作工作台项目介绍与静态流程演示">
+  <title>灵感小记 · 自媒体内容创作工作台</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top"><span>✳</span> 灵感小记</a>
+    <a class="source-link" href="https://github.com/kexinyang74-web/media-topic-assistant" target="_blank" rel="noreferrer">GitHub 源码 ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AI CONTENT WORKBENCH · PERSONAL PROJECT</p>
+        <h1>把真实经历，<br><em>慢慢变成作品。</em></h1>
+        <p class="lead">一套本机运行的自媒体内容创作工作台，将账号定位、素材沉淀、选题策划、稿件版本、制作排期、发布登记与数据复盘串成完整流程。</p>
+        <div class="actions">
+          <a class="primary" href="#demo">查看流程演示</a>
+          <a href="#implementation">查看技术方案</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="项目边界">
+        <span class="seal">LOCAL FIRST</span>
+        <h2>资料留在本机</h2>
+        <p>SQLite 保存创作资料和版本；只有主动使用 AI 功能时，相关文字才会发送给模型服务。</p>
+        <p class="boundary"><strong>静态流程演示</strong><br>本页面不调用 DeepSeek、不读写访客数据，也不执行平台发布。</p>
+      </aside>
+    </section>
+
+    <section class="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <p class="eyebrow">ONE WORKFLOW</p>
+        <h2 id="workflow-title">从想法到复盘，不再散落在多个工具里</h2>
+      </div>
+      <ol class="flow-list">
+        <li><b>01</b><span>定位<small>受众与内容方向</small></span></li>
+        <li><b>02</b><span>素材<small>经历、参考、待验证</small></span></li>
+        <li><b>03</b><span>选题<small>收藏与策划</small></span></li>
+        <li><b>04</b><span>稿件<small>图文、口播与视频</small></span></li>
+        <li><b>05</b><span>排期<small>按每周预算安排</small></span></li>
+        <li><b>06</b><span>复盘<small>从数据回到新问题</small></span></li>
+      </ol>
+    </section>
+
+    <section id="demo" class="demo-section" aria-labelledby="demo-title">
+      <div class="section-heading">
+        <p class="eyebrow">STATIC WALKTHROUGH</p>
+        <h2 id="demo-title">三个流程案例</h2>
+        <p>点击查看工作台如何保存上下文、组织创作过程和处理结果边界。</p>
+      </div>
+      <div class="demo-controls" role="group" aria-label="选择演示案例">
+        <button type="button" data-demo-id="material-to-work" aria-pressed="true">素材变作品</button>
+        <button type="button" data-demo-id="version-production" aria-pressed="false">版本与制作</button>
+        <button type="button" data-demo-id="publish-review" aria-pressed="false">发布与复盘</button>
+      </div>
+
+      <article class="demo-board" aria-live="polite">
+        <div class="demo-main">
+          <p class="case-no" data-demo-number>案例 01</p>
+          <h3 data-demo-title>从一条真实学习记录创建作品</h3>
+          <p class="case-problem" data-demo-problem>解决素材、选题和稿件彼此割裂，创作时反复寻找上下文的问题。</p>
+          <div class="input-card">
+            <span>输入</span>
+            <p data-demo-input>素材：第一次独立定位 Python 项目启动错误；状态：用户已亲测；待补：复现步骤截图。</p>
+          </div>
+          <div class="result-card">
+            <span>保存结果</span>
+            <h4 data-demo-result>1 个作品 · 2 种内容形式 · 1 份定位快照</h4>
+            <p data-demo-detail>从素材创建作品，同时选择“图文”和“录屏教程”；作品保存创建时的定位快照，后续修改账号定位不会改写旧作品。</p>
+          </div>
+        </div>
+        <aside class="demo-steps">
+          <p>系统处理</p>
+          <ol data-demo-steps>
+            <li>关联有来源状态的素材</li>
+            <li>创建选题与作品记录</li>
+            <li>保存形式和定位快照</li>
+          </ol>
+          <div class="guardrail">
+            <b>边界处理</b>
+            <p data-demo-guardrail>尚未完成的截图会保留为“待补”，不会被写成已经亲测的结果。</p>
+          </div>
+        </aside>
+      </article>
+    </section>
+
+    <section class="metrics" aria-labelledby="metrics-title">
+      <div class="section-heading">
+        <p class="eyebrow">VERIFIABLE SCOPE</p>
+        <h2 id="metrics-title">可核验的实现范围</h2>
+      </div>
+      <div class="metric-grid">
+        <article><strong>8 个助手</strong><span>覆盖定位到周期复盘</span></article>
+        <article><strong>5 种内容形式</strong><span>图文、口播、录屏、生活记录、混合视频</span></article>
+        <article><strong>75 项后端自动化测试</strong><span>覆盖数据、流程、错误与升级</span></article>
+        <article><strong>390px</strong><span>移动端浏览器流程覆盖</span></article>
+      </div>
+    </section>
+
+    <section id="implementation" class="implementation" aria-labelledby="implementation-title">
+      <div class="section-heading">
+        <p class="eyebrow">IMPLEMENTATION</p>
+        <h2 id="implementation-title">技术方案</h2>
+      </div>
+      <div class="tech-grid">
+        <article><span>应用层</span><b>Python · FastAPI · 原生 HTML/CSS/JS</b><p>本机 Web 应用，无前端构建依赖。</p></article>
+        <article><span>数据层</span><b>SQLite · 版本快照 · 幂等写入</b><p>保存创作资料、稿件版本、任务和复盘。</p></article>
+        <article><span>AI 层</span><b>DeepSeek API · 结构化输出</b><p>模型失败时保留已有稿件，并隐藏服务商原始错误。</p></article>
+        <article><span>质量层</span><b>pytest · Playwright</b><p>验证后端行为、真实按钮、刷新持久化和移动端布局。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>灵感小记 · 自媒体内容创作工作台</p>
+    <a href="https://github.com/kexinyang74-web/media-topic-assistant" target="_blank" rel="noreferrer">阅读项目文档与源码 ↗</a>
+  </footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+
